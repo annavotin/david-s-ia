@@ -1,0 +1,32 @@
+{% extends "base.html" %} {% block title %}Challenges{% endblock %}
+{% block content %}
+
+<br>
+<br>
+
+<div style="display:flex; flex-direction: row; justify-content: center; align-items: center]">
+
+  <ul class="list-group list-group-flush" style="background-color: rgb(218, 226, 241);">
+
+    {% for challenge in challenges %}
+    <form method='POST'>
+    <li class="list-group-item">
+
+        <div class="p-2">
+          <div class="d-flex justify-content-center">
+            
+            <div class="d-flex justify-content-between">
+              <div class="p-2" style="width: 200px">{{ challenge.name | truncate(22) }}</div>
+              <img src = "{{ challenge.badge }}" id = "image" >
+              <div style="width:20px"></div>
+            </div>
+        </div>
+    </li>
+    </form>
+    {% endfor %}
+
+  </ul>
+
+</div>
+
+{% endblock %}
